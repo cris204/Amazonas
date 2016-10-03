@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 2d9c9c3cf5bb4be489cf738c6e6874e5
-timeCreated: 1475522358
+guid: 9a4f48c65f52d3c428f5731ab62acd2f
+timeCreated: 1475457338
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: "BotonPeque\xF1o_5"
-    21300002: "BotonPeque\xF1o_6"
-    21300004: "BotonPeque\xF1o_7"
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,7 +38,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -54,46 +51,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: "BotonPeque\xF1o_5"
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 25
-        width: 325
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: "BotonPeque\xF1o_6"
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 20
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: "BotonPeque\xF1o_7"
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 13
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 
