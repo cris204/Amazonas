@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		KidsCollision.kidOnHouse += MoreScore ();
+		KidsCollision.kidOnHouse += MoreScore;
 		
 	}
 	
