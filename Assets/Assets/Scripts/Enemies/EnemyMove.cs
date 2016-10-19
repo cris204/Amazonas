@@ -13,6 +13,9 @@ public class EnemyMove : MonoBehaviour {
 	private float timeUpdate;
 	private bool timer;
 	private float timeToDisable;
+	private float timePaused;
+	private bool paused=false;
+
 	private SpawnEnemyAround enemySpawn;
 
 	static private List <EnemyMove> enemiesPool;
@@ -25,16 +28,36 @@ public class EnemyMove : MonoBehaviour {
 		if (enemiesPool == null)
 			enemiesPool = new List <EnemyMove> ();
 		enemiesPool.Add (this);
-
 	}
 
 	void Start () {
 		enemySpawn = GameObject.Find ("DestinationPoint").GetComponent <SpawnEnemyAround>();
 		gameObject.SetActive (false);
+		timeToDisable = 5f;
 	}
 
 	void Update () {
-		
+		if (GameManager.Instance.state == GameManager.gameState.normal && this.gameObject .activeInHierarchy ==true) 
+		{
+			rigidbodyEnemy.velocity = moveDirection;
+			if (paused) 
+			{
+				StartCoroutine(TimeToDisable ());
+				paused = false;
+			}
+		}
+		if (GameManager.Instance.state == GameManager.gameState.pause) 
+		{
+			rigidbodyEnemy.velocity = new Vector3 (0f, 0f, 0f);
+			if (!paused) 
+			{
+				this.StopAllCoroutines ();
+				paused = true;
+			}
+		}
+
+
+
 	}
 
 	protected void OnEnable()
@@ -53,9 +76,18 @@ public class EnemyMove : MonoBehaviour {
 
 	}
 
+	void Paused()
+	{
+		if (!paused) 
+		{
+			StopCoroutine (TimeToDisable ());
+			paused = true;
+		}
+	}
+
 	IEnumerator TimeToDisable()
 	{
-		yield return new WaitForSeconds (5f);
+		yield return new WaitForSeconds (timeToDisable );
 		OnBecameInvisible ();
 	}
 

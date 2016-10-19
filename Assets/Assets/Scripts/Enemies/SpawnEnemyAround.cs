@@ -33,9 +33,11 @@ public class SpawnEnemyAround : MonoBehaviour {
 	}
 
 	void Update () {
-		if (canSpawn) {
-			canSpawn = false;
-			StartCoroutine (SpawnEnemies ());
+		if (GameManager.Instance.state == GameManager.gameState.normal) {
+			if (canSpawn) {
+				canSpawn = false;
+				StartCoroutine (SpawnEnemies ());
+			}
 		}
 	}
 

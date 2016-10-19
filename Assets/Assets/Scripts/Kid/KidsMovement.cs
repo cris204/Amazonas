@@ -32,10 +32,16 @@ public class KidsMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (!caught)
-			agente.SetDestination (destino.transform.position);
-		else
-			transform.position = player.transform.position;
+		if (GameManager.Instance.state == GameManager.gameState.normal) {
+			if (!caught)
+				agente.SetDestination (destino.transform.position);
+			else
+				transform.position = player.transform.position;
+		}
+		if (GameManager.Instance.state == GameManager.gameState.pause) 
+		{
+			agente.SetDestination (transform .position);
+		}
 			
 	}
 }

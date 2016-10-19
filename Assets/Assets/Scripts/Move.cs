@@ -25,42 +25,44 @@ public class Move : MonoBehaviour
 		ejeX  = Input.GetAxis ("LeftJoystickX") ;
 		ejeZ= Input.GetAxis ("LeftJoystickY") ;	
 
-		if (characterController.isGrounded) {
-			movementVector.y = 0;
-			if (Input.GetButtonDown ("A")) {
-				movementVector.y = jumpPower;
-			}
-			if (Input.GetButton ("X")) 
+		if(GameManager .Instance.state ==  GameManager.gameState.normal)
 			{
-				if (ejeX < 0.2f && ejeZ < 0.2f && ejeX > -0.2f && ejeZ > -0.2f) 
+				
+			if (characterController.isGrounded) {
+				movementVector.y = 0;
+				if (Input.GetButtonDown ("A")) {
+					movementVector.y = jumpPower;
+				}
+				if (Input.GetButton ("X")) 
 				{
-					//characterController.
+					if (ejeX < 0.2f && ejeZ < 0.2f && ejeX > -0.2f && ejeZ > -0.2f) 
+					{
+						//characterController.
+					}
 				}
 			}
-		}
+
+			movementVector.y -= gravity * Time.deltaTime;
+			characterController.Move (movementVector * Time.deltaTime);
+
+			if (movementVector.magnitude > 0.05f) {
+				
+				Vector3 movement = new Vector3(movementVector .x , 0.0f, movementVector .z );
+				transform.rotation = Quaternion.LookRotation(movement);
 
 
 
-		movementVector.y -= gravity * Time.deltaTime;
-		characterController.Move (movementVector * Time.deltaTime);
+			//	Vector3 lookY= new Vector3 (0f,transform .position .y,0f);
+			//	transform.LookAt (transform .position + movementVector);
+			} else {
+				
+			}
 
-		if (movementVector.magnitude > 0.05f) {
-			
-			Vector3 movement = new Vector3(movementVector .x , 0.0f, movementVector .z );
-			transform.rotation = Quaternion.LookRotation(movement);
-
-
-
-		//	Vector3 lookY= new Vector3 (0f,transform .position .y,0f);
-		//	transform.LookAt (transform .position + movementVector);
-		} else {
-			
-		}
-
-		if (Input.GetButtonDown ("X")) 
-		{			
-			movementSpeed += 8;
-			StartCoroutine (Impulse ());
+			if (Input.GetButtonDown ("X")) 
+			{			
+				movementSpeed += 8;
+				StartCoroutine (Impulse ());
+			}
 		}
 	}
 
