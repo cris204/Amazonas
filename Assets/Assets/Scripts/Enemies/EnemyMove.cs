@@ -8,6 +8,10 @@ public class EnemyMove : MonoBehaviour {
 	private Vector3 moveDirection;
 	private Rigidbody rigidbodyEnemy;
 
+	public GameObject destinationPoint;
+	private NavMeshAgent navMesh;
+	private Vector3 positionDestinationPoint;
+
 	private  float seconds;
 	private float time;
 	private float timeUpdate;
@@ -24,6 +28,7 @@ public class EnemyMove : MonoBehaviour {
 	{
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent <Transform> ();
 		rigidbodyEnemy = GetComponent <Rigidbody> ();
+		navMesh = GetComponent <NavMeshAgent > ();
 
 		if (enemiesPool == null)
 			enemiesPool = new List <EnemyMove> ();
@@ -42,6 +47,7 @@ public class EnemyMove : MonoBehaviour {
 			rigidbodyEnemy.velocity = moveDirection;
 			if (paused) 
 			{
+				gameObject.GetComponentInChildren<Animator> ().enabled = true;
 				StartCoroutine(TimeToDisable ());
 				paused = false;
 			}
@@ -51,21 +57,22 @@ public class EnemyMove : MonoBehaviour {
 			rigidbodyEnemy.velocity = new Vector3 (0f, 0f, 0f);
 			if (!paused) 
 			{
+				gameObject.GetComponentInChildren<Animator> ().enabled = false;
 				this.StopAllCoroutines ();
 				paused = true;
 			}
 		}
-
-
-
 	}
 
 	protected void OnEnable()
 	{
-		moveDirection = (player.position - transform.position).normalized;
-		moveDirection = new Vector3 (moveDirection.x * speed, rigidbodyEnemy.velocity.y, moveDirection.z * speed);
+//	moveDirection = (player.position - transform.position).normalized;
+	//	moveDirection = new Vector3 (moveDirection.x * speed, rigidbodyEnemy.velocity.y, moveDirection.z * speed);
+
 		transform.LookAt (player.transform);
-		rigidbodyEnemy.velocity = moveDirection;
+		navMesh.SetDestination (destinationPoint.transform.position);
+
+	//	rigidbodyEnemy.velocity = moveDirection;
 		StartCoroutine (TimeToDisable ());
 	}
 
@@ -101,7 +108,6 @@ public class EnemyMove : MonoBehaviour {
 				enemyPool.transform.position = position;
 				//Vector3 rightRotation = (rotation.position - enemyPool.transform.position).normalized;
 				//enemyPool.transform.LookAt(rotation);
-
 				enemyPool.gameObject.SetActive (true);
 
 				return enemyPool;

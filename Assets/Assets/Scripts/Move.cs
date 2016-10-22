@@ -11,8 +11,6 @@ public class Move : MonoBehaviour
 	private float ejeX;
 	private float ejeZ;
 
-	public Animator playerAnimations;
-
 	 void Start()
 	 {
 		 characterController = GetComponent<CharacterController>();

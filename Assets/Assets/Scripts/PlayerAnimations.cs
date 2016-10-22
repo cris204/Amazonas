@@ -7,6 +7,8 @@ public class PlayerAnimations : MonoBehaviour {
 	private float ejeZ;
 	private CharacterController  player;
 
+	private bool paused=false;
+
 	void Awake()
 	{
 		playerAnimations = GetComponent <Animator > ();
@@ -20,6 +22,24 @@ public class PlayerAnimations : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
+		if (GameManager.Instance.state == GameManager.gameState.normal && this.gameObject .activeInHierarchy ==true) 
+		{
+			if (paused) 
+			{
+				gameObject.GetComponentInChildren<Animator> ().enabled = true;
+				paused = false;
+			}
+		}
+		if (GameManager.Instance.state == GameManager.gameState.pause) 
+		{
+			if (!paused) 
+			{
+				gameObject.GetComponentInChildren<Animator> ().enabled = false;
+				paused = true;
+			}
+		}
+
 		ejeX  = Input.GetAxis ("LeftJoystickX") ;
 		ejeZ= Input.GetAxis ("LeftJoystickY") ;	
 
