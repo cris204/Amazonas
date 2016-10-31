@@ -70,7 +70,7 @@ public class EnemyMove : MonoBehaviour {
 	//	moveDirection = new Vector3 (moveDirection.x * speed, rigidbodyEnemy.velocity.y, moveDirection.z * speed);
 
 		transform.LookAt (player.transform);
-		navMesh.SetDestination (destinationPoint.transform.position);
+	//	navMesh.SetDestination (destinationPoint.transform.position);
 
 	//	rigidbodyEnemy.velocity = moveDirection;
 		StartCoroutine (TimeToDisable ());

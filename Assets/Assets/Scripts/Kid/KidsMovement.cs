@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement ;
 
 public class KidsMovement : MonoBehaviour {
 
@@ -23,11 +24,13 @@ public class KidsMovement : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		caught = false;
 		agente = GetComponent <NavMeshAgent > ();
-		destino = GameObject.Find ("DestinationPoint");
+
 	}
 
 	void Start () {
-
+		destino = GameObject.Find ("DestinationPoint");
+		if (GameManager.Instance.state == GameManager.gameState.menu)
+			destino = GameObject.Find ("PuntoDestinoNiño");
 	}
 
 	// Update is called once per frame
@@ -38,10 +41,17 @@ public class KidsMovement : MonoBehaviour {
 			else
 				transform.position = player.transform.position;
 		}
-		if (GameManager.Instance.state == GameManager.gameState.pause) 
+		if (GameManager.Instance.state != GameManager.gameState.normal) 
 		{
 			agente.SetDestination (transform .position);
 		}
-			
+
+		if (SceneManager.GetActiveScene ().name == "MenuPrincipal")
+			RunAcross ();			
+	}
+
+	void RunAcross ()
+	{
+		
 	}
 }

@@ -4,19 +4,16 @@ using UnityEngine .UI ;
 
 public class GameManager : MonoBehaviour {
 
-	private int score;
+	public int score;
 	[SerializeField ]
 	private int pointsPerKid;
-	public Text scoreText;
-	public Text plusKid;
 	public int scoreKid=0;
-
 	public float seconds;
 	public float minutes;
 	private float time;
 	private float timeUpdate;
 	private bool paused;
-	public enum gameState{normal,pause,bonusSalta,bonusCorre};
+	public enum gameState{normal,pause,bonusSalta,bonusCorre,levelComplete,menu,menuPause};
 	public gameState state = gameState .normal ; 
 
 	public static GameManager instance;
@@ -39,10 +36,11 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		GameManager.Instance.state = GameManager.gameState.menu;
 		KidsCollision.kidOnHouse += MoreScore;
 		//time = Time.time - timeUpdate;
 		time = Time.time - (Time .time -1);
+
 	}
 	
 	// Update is called once per frame
@@ -50,7 +48,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Start")) 
 		{
-			if (!paused) {
+			if (!paused) {				
 				state = gameState.pause;
 				paused = true;
 			} else {
@@ -63,13 +61,6 @@ public class GameManager : MonoBehaviour {
 			//score += (int)timeUpdate % 60;
 			score += (int)timeUpdate;
 		}
-		ShowTexts ();
-	}
-
-	void ShowTexts()
-	{
-		scoreText.text = score.ToString();
-		plusKid.text = scoreKid .ToString ();
 	}
 
 	private void MoreScore()
@@ -82,5 +73,12 @@ public class GameManager : MonoBehaviour {
 	{
 		
 	}
+
+	public void Resume()
+	{
+		state = gameState.normal;
+		paused = false;
+	}
+
 
 }

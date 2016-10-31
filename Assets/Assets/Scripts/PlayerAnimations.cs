@@ -3,16 +3,13 @@ using System.Collections;
 
 public class PlayerAnimations : MonoBehaviour {
 	private Animator playerAnimations;
-	private float ejeX;
-	private float ejeZ;
-	private CharacterController  player;
-
+	private Rigidbody player;
 	private bool paused=false;
 
 	void Awake()
 	{
 		playerAnimations = GetComponent <Animator > ();
-		player = GameObject.Find ("Player").GetComponent<CharacterController  > ();
+		player = GameObject.Find ("Player").GetComponent<Rigidbody   > ();
 	}
 
 	void Start () {
@@ -23,7 +20,7 @@ public class PlayerAnimations : MonoBehaviour {
 	void Update () 
 	{
 
-		if (GameManager.Instance.state == GameManager.gameState.normal && this.gameObject .activeInHierarchy ==true) 
+		if ((GameManager.Instance.state == GameManager.gameState.normal || GameManager .Instance.state ==  GameManager.gameState.menu) && this.gameObject .activeInHierarchy ==true) 
 		{
 			if (paused) 
 			{
@@ -31,7 +28,7 @@ public class PlayerAnimations : MonoBehaviour {
 				paused = false;
 			}
 		}
-		if (GameManager.Instance.state == GameManager.gameState.pause) 
+		if ((GameManager.Instance.state == GameManager.gameState.pause  || GameManager .Instance.state ==  GameManager.gameState.menuPause) ) 
 		{
 			if (!paused) 
 			{
@@ -40,8 +37,6 @@ public class PlayerAnimations : MonoBehaviour {
 			}
 		}
 
-		ejeX  = Input.GetAxis ("LeftJoystickX") ;
-		ejeZ= Input.GetAxis ("LeftJoystickY") ;	
 
 		if(Input.GetButtonDown ("A")) ///Jump Animation
 		{			
@@ -56,8 +51,8 @@ public class PlayerAnimations : MonoBehaviour {
 		}
 
 //
-//		if (ejeX < 0.2f && ejeZ < 0.2f && ejeX > -0.2f && ejeZ >- 0.2f)
-		if(player.velocity == new Vector3 (0,0, 0)) /// Idle Animation
+		if (player .velocity.x < 0.2f && player .velocity.z< 0.2f && player .velocity.x> -0.2f && player .velocity.z>- 0.2f)
+		//if(player.velocity == new Vector3 (0,0, 0)) /// Idle Animation
 			playerAnimations.SetBool ("Walk", false);
 		else
 			playerAnimations.SetBool ("Walk", true); ////Walk Animation

@@ -7,6 +7,7 @@ public class KidsCollision : MonoBehaviour {
 
 	public delegate void KidOnHouse();
 	public static event KidOnHouse kidOnHouse;
+	private GameObject mySpawn;
 
 	void Awake()
 	{
@@ -14,8 +15,11 @@ public class KidsCollision : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		if (GameManager.Instance.state == GameManager.gameState.menu) {			
+			mySpawn = GameObject.Find ("Spawn (1)");
+		}	
 	}
 	
 	// Update is called once per frame
@@ -33,6 +37,11 @@ public class KidsCollision : MonoBehaviour {
 			KidsMovement.Instance.caught = false;
 			KidSafe ();
 			StartCoroutine (DisableCollider ());
+		}
+
+		if (other.gameObject.tag == "DestinoNiño") 
+		{
+			transform.position = mySpawn.transform.position;
 		}
 	}
 

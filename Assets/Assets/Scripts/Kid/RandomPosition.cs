@@ -42,7 +42,6 @@ public class RandomPosition : MonoBehaviour {
 		{
 			
 			foreach (Collider col in area) {
-				Debug.Log (col.gameObject.name);
 				if (col.gameObject.name == "DestinationPoint") {
 					Vector2 random = Random.insideUnitCircle;
 					Vector3 position = new Vector3 (random.x, transform.position.y, random.y);

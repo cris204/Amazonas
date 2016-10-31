@@ -9,6 +9,7 @@ public class KidsSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Instantiate (kid, transform.position, transform.rotation);
+		GameManager.Instance.state = GameManager.gameState.normal;
 	}
 	
 	// Update is called once per frame

@@ -6,11 +6,10 @@ public class GoScene : MonoBehaviour {
 
 	public float timeForChange;
 	public string nameOfScene;
-	private AudioSource audio;
+	//private AudioSource sonido;
+
 	void Start () {
-		audio = GetComponent<AudioSource > ();
-		if (SceneManager.GetActiveScene().name .Equals("1_Splash Screen"))
-		StartCoroutine (MainMenu ());
+		//sonido = GetComponent<AudioSource > ();
 	}
 	
 	// Update is called once per frame
@@ -32,7 +31,7 @@ public class GoScene : MonoBehaviour {
 
 	public void ChangeScene()
 	{if (SceneManager.GetActiveScene().name .Equals("3_Choose Emperador"))
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 		StartCoroutine (MainMenu ());
 	}
 }

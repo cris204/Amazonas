@@ -5,15 +5,19 @@ public class Move : MonoBehaviour
 {
 	private Vector3 movementVector;
 	private CharacterController characterController;
-	private float movementSpeed = 8;
+	[SerializeField]
+	private float movementSpeed = 3;
+	[SerializeField]
 	private float jumpPower = 15;
-	private float gravity = 40;
 	private float ejeX;
 	private float ejeZ;
+	private Rigidbody rbPlayer;
+	public bool touchFloor;
 
 	 void Start()
 	 {
 		 characterController = GetComponent<CharacterController>();
+		rbPlayer = GetComponent <Rigidbody > ();
 	 }
 
 	void Update ()
@@ -23,43 +27,35 @@ public class Move : MonoBehaviour
 		ejeX  = Input.GetAxis ("LeftJoystickX") ;
 		ejeZ= Input.GetAxis ("LeftJoystickY") ;	
 
-		if(GameManager .Instance.state ==  GameManager.gameState.normal)
-			{
+		if(GameManager .Instance.state ==  GameManager.gameState.normal || GameManager .Instance.state ==  GameManager.gameState.menu)
+		{
 				
-			if (characterController.isGrounded) {
-				movementVector.y = 0;
+			if (touchFloor) {
+				
 				if (Input.GetButtonDown ("A")) {
-					movementVector.y = jumpPower;
+					rbPlayer.velocity = new Vector3 (0, jumpPower, 0);
+					touchFloor = false;
 				}
 				if (Input.GetButton ("X")) 
 				{
-					if (ejeX < 0.2f && ejeZ < 0.2f && ejeX > -0.2f && ejeZ > -0.2f) 
-					{
-						//characterController.
+					if (Input.GetButtonDown ("X") && movementSpeed <=3) 
+					{			
+						movementSpeed += 2;
+						StartCoroutine (Impulse ());
 					}
 				}
 			}
 
-			movementVector.y -= gravity * Time.deltaTime;
-			characterController.Move (movementVector * Time.deltaTime);
-
+			Vector3 vectorToMove = new Vector3 (movementVector.x * movementSpeed, rbPlayer.velocity.y, movementVector.z * movementSpeed);
+			if (rbPlayer .velocity .y <0f)
+				vectorToMove = new Vector3 (movementVector.x * movementSpeed, rbPlayer.velocity.y*1f, movementVector.z * movementSpeed);
+			movementVector = vectorToMove;
+			rbPlayer.velocity = movementVector;
+				
 			if (movementVector.magnitude > 0.05f) {
 				
 				Vector3 movement = new Vector3(movementVector .x , 0.0f, movementVector .z );
 				transform.rotation = Quaternion.LookRotation(movement);
-
-
-
-			//	Vector3 lookY= new Vector3 (0f,transform .position .y,0f);
-			//	transform.LookAt (transform .position + movementVector);
-			} else {
-				
-			}
-
-			if (Input.GetButtonDown ("X")) 
-			{			
-				movementSpeed += 8;
-				StartCoroutine (Impulse ());
 			}
 		}
 	}
@@ -67,8 +63,23 @@ public class Move : MonoBehaviour
 	IEnumerator Impulse()
 	{
 		yield return new WaitForSeconds (0.2f);
-		movementSpeed -= 8;
+		movementSpeed -= 2;
 	}
 		 
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "Piso") 
+		{
+			touchFloor = true;
+		}
+	}
+
+	void OnCollisionStay(Collision other)
+	{
+		if (other.gameObject.tag == "Piso") 
+		{
+			touchFloor = true;
+		}
+	}
 	 
 }
