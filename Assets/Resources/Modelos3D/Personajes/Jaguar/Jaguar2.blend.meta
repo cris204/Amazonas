@@ -1,0 +1,670 @@
+fileFormatVersion: 2
+guid: cbbc9e891c64f77469c430780d4c9f56
+timeCreated: 1479267160
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Antebrazo_IK_L
+    100002: Antebrazo_IK_R
+    100004: Antebrazo_L
+    100006: Antebrazo_R
+    100008: Armature
+    100010: Bone
+    100012: Bone_001
+    100014: Bone_002
+    100016: Bone_003
+    100018: Bone_004
+    100020: Bone_IK
+    100022: Brazo_IK_L
+    100024: Brazo_IK_R
+    100026: Brazo_L
+    100028: Brazo_R
+    100030: Cabeza
+    100032: Cabeza_IK
+    100034: Cadera
+    100036: Cadera_L
+    100038: Cadera_R
+    100040: Cube
+    100042: Cuello
+    100044: Espalda
+    100046: //RootNode
+    100048: Manito_IK_L
+    100050: Manito_IK_R
+    100052: Manito_L
+    100054: Manito_R
+    100056: Muscol_L
+    100058: Muscol_L_IK
+    100060: Muscol_R
+    100062: Muscol_R_IK
+    100064: Omoplato_IK_L
+    100066: Omoplato_L
+    100068: Omoplato_R
+    100070: Omoplato_R_IK
+    100072: Pantorrilla_IK_L
+    100074: Pantorrilla_IK_R
+    100076: Pantorrilla_L
+    100078: Pantorrilla_R
+    100080: PaticaTrasera_IK_L
+    100082: PaticaTrasera_IK_R
+    100084: PaticaTrasera_L
+    100086: PaticaTrasera_R
+    100088: Pie_IK_L
+    100090: Pie_IK_R
+    100092: Pie_L
+    100094: Pie_R
+    400000: Antebrazo_IK_L
+    400002: Antebrazo_IK_R
+    400004: Antebrazo_L
+    400006: Antebrazo_R
+    400008: Armature
+    400010: Bone
+    400012: Bone_001
+    400014: Bone_002
+    400016: Bone_003
+    400018: Bone_004
+    400020: Bone_IK
+    400022: Brazo_IK_L
+    400024: Brazo_IK_R
+    400026: Brazo_L
+    400028: Brazo_R
+    400030: Cabeza
+    400032: Cabeza_IK
+    400034: Cadera
+    400036: Cadera_L
+    400038: Cadera_R
+    400040: Cube
+    400042: Cuello
+    400044: Espalda
+    400046: //RootNode
+    400048: Manito_IK_L
+    400050: Manito_IK_R
+    400052: Manito_L
+    400054: Manito_R
+    400056: Muscol_L
+    400058: Muscol_L_IK
+    400060: Muscol_R
+    400062: Muscol_R_IK
+    400064: Omoplato_IK_L
+    400066: Omoplato_L
+    400068: Omoplato_R
+    400070: Omoplato_R_IK
+    400072: Pantorrilla_IK_L
+    400074: Pantorrilla_IK_R
+    400076: Pantorrilla_L
+    400078: Pantorrilla_R
+    400080: PaticaTrasera_IK_L
+    400082: PaticaTrasera_IK_R
+    400084: PaticaTrasera_L
+    400086: PaticaTrasera_R
+    400088: Pie_IK_L
+    400090: Pie_IK_R
+    400092: Pie_L
+    400094: Pie_R
+    4300000: Cube
+    7400000: Default Take
+    7400002: Quiet
+    7400004: run_cycle_jaguar_
+    7400006: walk_cycle_jaguar_
+    9500000: //RootNode
+    13700000: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Antebrazo_IK_L
+        weight: 1
+      - path: Armature/Antebrazo_IK_R
+        weight: 1
+      - path: Armature/Bone_IK
+        weight: 1
+      - path: Armature/Brazo_IK_L
+        weight: 1
+      - path: Armature/Brazo_IK_R
+        weight: 1
+      - path: Armature/Cabeza_IK
+        weight: 1
+      - path: Armature/Cadera
+        weight: 1
+      - path: Armature/Cadera/Bone
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002/Bone_004
+        weight: 1
+      - path: Armature/Cadera/Cadera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L/PaticaTrasera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R/PaticaTrasera_R
+        weight: 1
+      - path: Armature/Cadera/Espalda
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello/Cabeza
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L/Manito_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R/Manito_R
+        weight: 1
+      - path: Armature/Manito_IK_L
+        weight: 1
+      - path: Armature/Manito_IK_R
+        weight: 1
+      - path: Armature/Muscol_L_IK
+        weight: 1
+      - path: Armature/Muscol_R_IK
+        weight: 1
+      - path: Armature/Omoplato_IK_L
+        weight: 1
+      - path: Armature/Omoplato_R_IK
+        weight: 1
+      - path: Armature/Pantorrilla_IK_L
+        weight: 1
+      - path: Armature/Pantorrilla_IK_R
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_L
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_R
+        weight: 1
+      - path: Armature/Pie_IK_L
+        weight: 1
+      - path: Armature/Pie_IK_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Quiet
+      takeName: Quiet
+      firstFrame: -1
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Antebrazo_IK_L
+        weight: 1
+      - path: Armature/Antebrazo_IK_R
+        weight: 1
+      - path: Armature/Bone_IK
+        weight: 1
+      - path: Armature/Brazo_IK_L
+        weight: 1
+      - path: Armature/Brazo_IK_R
+        weight: 1
+      - path: Armature/Cabeza_IK
+        weight: 1
+      - path: Armature/Cadera
+        weight: 1
+      - path: Armature/Cadera/Bone
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002/Bone_004
+        weight: 1
+      - path: Armature/Cadera/Cadera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L/PaticaTrasera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R/PaticaTrasera_R
+        weight: 1
+      - path: Armature/Cadera/Espalda
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello/Cabeza
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L/Manito_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R/Manito_R
+        weight: 1
+      - path: Armature/Manito_IK_L
+        weight: 1
+      - path: Armature/Manito_IK_R
+        weight: 1
+      - path: Armature/Muscol_L_IK
+        weight: 1
+      - path: Armature/Muscol_R_IK
+        weight: 1
+      - path: Armature/Omoplato_IK_L
+        weight: 1
+      - path: Armature/Omoplato_R_IK
+        weight: 1
+      - path: Armature/Pantorrilla_IK_L
+        weight: 1
+      - path: Armature/Pantorrilla_IK_R
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_L
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_R
+        weight: 1
+      - path: Armature/Pie_IK_L
+        weight: 1
+      - path: Armature/Pie_IK_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run_cycle_jaguar_
+      takeName: run_cycle_jaguar_
+      firstFrame: 1
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Antebrazo_IK_L
+        weight: 1
+      - path: Armature/Antebrazo_IK_R
+        weight: 1
+      - path: Armature/Bone_IK
+        weight: 1
+      - path: Armature/Brazo_IK_L
+        weight: 1
+      - path: Armature/Brazo_IK_R
+        weight: 1
+      - path: Armature/Cabeza_IK
+        weight: 1
+      - path: Armature/Cadera
+        weight: 1
+      - path: Armature/Cadera/Bone
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002/Bone_004
+        weight: 1
+      - path: Armature/Cadera/Cadera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L/PaticaTrasera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R/PaticaTrasera_R
+        weight: 1
+      - path: Armature/Cadera/Espalda
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello/Cabeza
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L/Manito_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R/Manito_R
+        weight: 1
+      - path: Armature/Manito_IK_L
+        weight: 1
+      - path: Armature/Manito_IK_R
+        weight: 1
+      - path: Armature/Muscol_L_IK
+        weight: 1
+      - path: Armature/Muscol_R_IK
+        weight: 1
+      - path: Armature/Omoplato_IK_L
+        weight: 1
+      - path: Armature/Omoplato_R_IK
+        weight: 1
+      - path: Armature/Pantorrilla_IK_L
+        weight: 1
+      - path: Armature/Pantorrilla_IK_R
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_L
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_R
+        weight: 1
+      - path: Armature/Pie_IK_L
+        weight: 1
+      - path: Armature/Pie_IK_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk_cycle_jaguar_
+      takeName: walk_cycle_jaguar_
+      firstFrame: 1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Antebrazo_IK_L
+        weight: 1
+      - path: Armature/Antebrazo_IK_R
+        weight: 1
+      - path: Armature/Bone_IK
+        weight: 1
+      - path: Armature/Brazo_IK_L
+        weight: 1
+      - path: Armature/Brazo_IK_R
+        weight: 1
+      - path: Armature/Cabeza_IK
+        weight: 1
+      - path: Armature/Cadera
+        weight: 1
+      - path: Armature/Cadera/Bone
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002
+        weight: 1
+      - path: Armature/Cadera/Bone/Bone_001/Bone_003/Bone_002/Bone_004
+        weight: 1
+      - path: Armature/Cadera/Cadera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_L/Muscol_L/Pantorrilla_L/Pie_L/PaticaTrasera_L
+        weight: 1
+      - path: Armature/Cadera/Cadera_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R
+        weight: 1
+      - path: Armature/Cadera/Cadera_R/Muscol_R/Pantorrilla_R/Pie_R/PaticaTrasera_R
+        weight: 1
+      - path: Armature/Cadera/Espalda
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello
+        weight: 1
+      - path: Armature/Cadera/Espalda/Cuello/Cabeza
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_L/Brazo_L/Antebrazo_L/Manito_L
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R
+        weight: 1
+      - path: Armature/Cadera/Espalda/Omoplato_R/Brazo_R/Antebrazo_R/Manito_R
+        weight: 1
+      - path: Armature/Manito_IK_L
+        weight: 1
+      - path: Armature/Manito_IK_R
+        weight: 1
+      - path: Armature/Muscol_L_IK
+        weight: 1
+      - path: Armature/Muscol_R_IK
+        weight: 1
+      - path: Armature/Omoplato_IK_L
+        weight: 1
+      - path: Armature/Omoplato_R_IK
+        weight: 1
+      - path: Armature/Pantorrilla_IK_L
+        weight: 1
+      - path: Armature/Pantorrilla_IK_R
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_L
+        weight: 1
+      - path: Armature/PaticaTrasera_IK_R
+        weight: 1
+      - path: Armature/Pie_IK_L
+        weight: 1
+      - path: Armature/Pie_IK_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
