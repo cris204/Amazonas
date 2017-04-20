@@ -6,7 +6,7 @@ public class KidsMovement : MonoBehaviour {
 
 	private GameObject player;
 
-	NavMeshAgent  agente;
+	UnityEngine.AI.NavMeshAgent  agente;
 	public GameObject destino;
 	public bool caught;
 
@@ -23,7 +23,7 @@ public class KidsMovement : MonoBehaviour {
 		instance = this;
 		player = GameObject.FindGameObjectWithTag ("Player");
 		caught = false;
-		agente = GetComponent <NavMeshAgent > ();
+		agente = GetComponent <UnityEngine.AI.NavMeshAgent > ();
 
 	}
 

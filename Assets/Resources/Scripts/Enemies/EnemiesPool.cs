@@ -14,12 +14,12 @@ public class EnemiesPool : MonoBehaviour {
 	}
 
 	[SerializeField]
-	private NavMeshAgent[] enemiesPrefab;
+	private UnityEngine.AI.NavMeshAgent[] enemiesPrefab;
 
 	[SerializeField]
 	private int size;
 
-	private List<NavMeshAgent> enemies;
+	private List<UnityEngine.AI.NavMeshAgent> enemies;
 
 	private void Awake()
 	{
@@ -32,19 +32,19 @@ public class EnemiesPool : MonoBehaviour {
 
 	private void PrepareEnemies ()
 	{
-		enemies = new List<NavMeshAgent> ();
+		enemies = new List<UnityEngine.AI.NavMeshAgent> ();
 		for (int i = 0; i < size; i++)
 			AddEnemy ();
 	}
 
-	public NavMeshAgent GetEnemy ()
+	public UnityEngine.AI.NavMeshAgent GetEnemy ()
 	{
 		if (enemies.Count == 0)
 			AddEnemy ();
 		return AllocateEnemy ();
 	}
 
-	public void ReleaseEnemy (NavMeshAgent enemy)
+	public void ReleaseEnemy (UnityEngine.AI.NavMeshAgent enemy)
 	{
 		enemy.gameObject.SetActive (false);
 		enemies.Add (enemy);
@@ -53,14 +53,14 @@ public class EnemiesPool : MonoBehaviour {
 	private void AddEnemy ()
 	{
 		int p = Random.Range (0, enemiesPrefab.Length);
-		NavMeshAgent instance = Instantiate (enemiesPrefab [p]);
+		UnityEngine.AI.NavMeshAgent instance = Instantiate (enemiesPrefab [p]);
 		instance.gameObject.SetActive (false);
 		enemies.Add (instance);
 	}
 
-	private NavMeshAgent AllocateEnemy ()
+	private UnityEngine.AI.NavMeshAgent AllocateEnemy ()
 	{
-		NavMeshAgent enemy = enemies [enemies.Count - 1];
+		UnityEngine.AI.NavMeshAgent enemy = enemies [enemies.Count - 1];
 		enemies.RemoveAt (enemies.Count - 1);
 		enemy.gameObject.SetActive (true);
 		return enemy;

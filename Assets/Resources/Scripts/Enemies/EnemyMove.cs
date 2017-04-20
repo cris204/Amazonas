@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine.SceneManagement ;
 
-[RequireComponent (typeof (NavMeshAgent))]
+[RequireComponent (typeof (UnityEngine.AI.NavMeshAgent))]
 public class EnemyMove : MonoBehaviour {
 
-	private NavMeshAgent navMeshEnemy;
+	private UnityEngine.AI.NavMeshAgent navMeshEnemy;
 	[SerializeField ]
 	private GameObject destinationPoint;
 	private GameObject animators;
@@ -22,7 +22,7 @@ public class EnemyMove : MonoBehaviour {
 
 	private void Awake()
 	{
-		navMeshEnemy = GetComponent <NavMeshAgent > ();
+		navMeshEnemy = GetComponent <UnityEngine.AI.NavMeshAgent > ();
 		animators = this.transform.GetChild (0).gameObject;
 	}
 

@@ -5,10 +5,14 @@ public class KidsSpawn : MonoBehaviour {
 
 	[SerializeField]
 	GameObject kid;
+	[SerializeField]
+	GameObject spawn;
 
-	// Use this for initialization
+	void Awake(){
+		spawn.transform.position=new Vector3(Random.Range(-20f,20f),0,Random.Range(-15f,15f));
+	}
 	void Start () {
-		Instantiate (kid, transform.position, transform.rotation);
+		Instantiate (kid, spawn.transform.position, transform.rotation);
 		GameManager.Instance.state = GameManager.gameState.normal;
 	}
 	

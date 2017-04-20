@@ -84,7 +84,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Resume()
-	{
+	{	
+		
 		state = gameState.normal;
 		paused = false;
 	}

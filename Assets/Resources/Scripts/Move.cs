@@ -7,6 +7,8 @@ public class Move : MonoBehaviour
 	private CharacterController characterController;
 	[SerializeField]
 	private float movementSpeed = 3;
+	private Vector3 movement;
+	
 	[SerializeField]
 	private float jumpPower = 15;
 	private float ejeX;
@@ -14,10 +16,15 @@ public class Move : MonoBehaviour
 	private Rigidbody rbPlayer;
 	public bool touchFloor;
 
+	[SerializeField]
+	private float cooldowninit;
+	private float cooldown;
+
 	 void Start()
 	 {
 		 characterController = GetComponent<CharacterController>();
 		rbPlayer = GetComponent <Rigidbody > ();
+		
 	 }
 
 	void Update ()
@@ -26,9 +33,10 @@ public class Move : MonoBehaviour
 		movementVector.z = Input.GetAxis ("LeftJoystickY") * movementSpeed;
 		ejeX  = Input.GetAxis ("LeftJoystickX") ;
 		ejeZ= Input.GetAxis ("LeftJoystickY") ;	
-
+		cooldown-=Time.deltaTime;
+	//	Debug.Log(cooldown);
 		if((GameManager .Instance.state ==  GameManager.gameState.normal || GameManager .Instance.state ==  GameManager.gameState.menu) )
-		{
+		{//necesito un pausa ty <3
 				
 			if (touchFloor && KidsMovement.Instance.caught == false) {
 				
@@ -36,10 +44,12 @@ public class Move : MonoBehaviour
 					rbPlayer.velocity = new Vector3 (0, jumpPower, 0);
 					touchFloor = false;
 				}
-				if (Input.GetButton ("X")) 
+				if (Input.GetButtonDown ("X") && cooldown<0 ) 
 				{
-					if (Input.GetButtonDown ("X") && movementSpeed <=3) 
-					{			
+					if ( movementSpeed <=3) 
+					{	
+						
+						cooldown=cooldowninit;
 						movementSpeed += 2;
 						StartCoroutine (Impulse ());
 					}
@@ -54,9 +64,22 @@ public class Move : MonoBehaviour
 				
 			if (movementVector.magnitude > 0.05f) {
 				
-				Vector3 movement = new Vector3(movementVector .x , 0.0f, movementVector .z );
+				movement = new Vector3(movementVector .x , 0.0f, movementVector .z );
 				transform.rotation = Quaternion.LookRotation(movement);
 			}
+
+			if(rbPlayer.velocity==Vector3.zero){
+				
+				transform.rotation = Quaternion.Euler(Vector3.zero);
+			}
+		}
+		
+		
+		if((GameManager .Instance.state ==  GameManager.gameState.pause || GameManager .Instance.state ==  GameManager.gameState.menuPause) )
+		{
+			Time.timeScale=0;
+		}else{
+			Time.timeScale=1;
 		}
 	}
 

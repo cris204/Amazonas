@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class SpawnEnemyAround : MonoBehaviour {
 
 	public GameObject enemy;
-	private NavMeshAgent enemies;
+	private UnityEngine.AI.NavMeshAgent enemies;
 
 	public int sizeOfRadiusSpawn;
 	public float spawnTime;
@@ -45,7 +45,7 @@ public class SpawnEnemyAround : MonoBehaviour {
 
 	IEnumerator SpawnEnemies()
 	{		
-		NavMeshAgent enemy = EnemiesPool.Instance.GetEnemy ();
+		UnityEngine.AI.NavMeshAgent enemy = EnemiesPool.Instance.GetEnemy ();
 		GameObject destinationPoint = enemy.transform.GetChild (1).gameObject;
 
 		//Crear un punto random en un circulo de dimension 1

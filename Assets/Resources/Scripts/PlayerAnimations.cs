@@ -5,6 +5,9 @@ public class PlayerAnimations : MonoBehaviour {
 	private Animator playerAnimations;
 	private Rigidbody player;
 	private bool paused=false;
+		[SerializeField]
+	private float cooldowninit;
+	private float cooldown;
 
 	void Awake()
 	{
@@ -19,7 +22,7 @@ public class PlayerAnimations : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-
+		cooldown-=Time.deltaTime;
 		if ((GameManager.Instance.state == GameManager.gameState.normal || GameManager .Instance.state ==  GameManager.gameState.menu) && this.gameObject .activeInHierarchy ==true) 
 		{
 			if (paused) 
@@ -44,8 +47,9 @@ public class PlayerAnimations : MonoBehaviour {
 			StartCoroutine (DisableJump ());
 		}
 
-		if (Input.GetButtonDown ("X")&& KidsMovement.Instance.caught == false) 
-		{			
+		if (Input.GetButtonDown ("X")&& KidsMovement.Instance.caught == false && cooldown<0) 
+		{		
+			cooldown=cooldowninit;	
 			playerAnimations.SetBool ("Scroll", true);
 			StartCoroutine (DisableScroll ());
 		}
